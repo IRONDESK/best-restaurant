@@ -5,11 +5,13 @@ import Link from "next/link"
 function Header() {
   return (
     <Container>
-      <Name>
-        AWESOME
-        <br />
-        FOOD STORE
-      </Name>
+      <Link href="/">
+        <Name>
+          AWESOME
+          <br />
+          FOOD STORE
+        </Name>
+      </Link>
       <Menu>
         <li>
           <Link href="/about">
@@ -35,6 +37,7 @@ const Container = styled.header`
 const Name = styled.h1`
   font-size: 1.6rem;
   font-weight: 900;
+  cursor: pointer;
 `
 const Menu = styled.ul`
   display: flex;
