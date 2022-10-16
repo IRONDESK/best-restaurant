@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { createPortal } from "react-dom"
 import styled from "@emotion/styled"
 import Link from "next/link"
 
@@ -16,8 +17,10 @@ function Modal({
   url,
   setViewModal,
 }: ICardItemDtosTypeWithModal) {
+  // 라스트 오더 분리
   const [descript, lastOrder] = description.split("LAST ORDER : ")
-  return (
+
+  return createPortal(
     <>
       <Backdrop onClick={() => setViewModal(false)} />
       <Container>
@@ -47,7 +50,8 @@ function Modal({
           ) : null}
         </InfoWrap>
       </Container>
-    </>
+    </>,
+    document.getElementById("modal")!
   )
 }
 

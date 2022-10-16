@@ -5,7 +5,10 @@ import Layout from "../components/Layouts/Layout"
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Layout>
-      <Component {...pageProps} />
+      <>
+        <Component {...pageProps} />
+        <div id="modal"></div>
+      </>
     </Layout>
   )
 }
