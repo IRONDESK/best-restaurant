@@ -57,6 +57,15 @@ const Container = styled.main`
     font-size: 1.5rem;
     line-height: 2.2rem;
   }
+  @media (max-width: 864px) {
+    .head-slogan {
+      font-size: 2rem;
+      line-height: 3rem;
+      strong {
+        font-size: 2.5rem;
+      }
+    }
+  }
 `
 
 export default Home
