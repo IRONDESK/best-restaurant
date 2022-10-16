@@ -20,6 +20,20 @@ function Modal({
   // 라스트 오더 분리
   const [descript, lastOrder] = description.split("LAST ORDER : ")
 
+  // 모달 켜질 때, 스크롤 움직임 방지
+  useEffect(() => {
+    document.body.style.cssText = `
+      position: fixed; 
+      top: -${window.scrollY}px;
+      overflow-y: scroll;
+      width: 100%;`
+    return () => {
+      const scrollY = document.body.style.top
+      document.body.style.cssText = ""
+      window.scrollTo(0, parseInt(scrollY || "0", 10) * -1)
+    }
+  }, [])
+
   return createPortal(
     <>
       <Backdrop onClick={() => setViewModal(false)} />
