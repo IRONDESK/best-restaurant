@@ -40,7 +40,7 @@ function Modal({
       <Container>
         <Close onClick={() => setViewModal(false)} />
         <ImgWrap>
-          <img src={image} alt={name} />
+          <Img src={image} alt={name} />
         </ImgWrap>
         <InfoWrap>
           <h5 className="info-card">{name}</h5>
@@ -118,14 +118,14 @@ const Close = styled.button`
 `
 const ImgWrap = styled.div`
   flex: 1.5;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
   @media (max-width: 864px) {
     height: 360px;
   }
+`
+const Img = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `
 const InfoWrap = styled.div`
   flex: 1;

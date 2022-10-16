@@ -9,8 +9,8 @@ function Card({ id, name, description, thumb, image, url }: ICardItemDtosType) {
   return (
     <>
       <Container onClick={() => setViewModal(true)}>
-        <img src={image} alt={name} />
-        <span className="a11y-hidden">{name}</span>
+        <Image src={image} alt={name} />
+        <button className="a11y-hidden">{name}</button>
       </Container>
       {viewModal ? (
         <Modal
@@ -33,14 +33,14 @@ const Container = styled.li`
   overflow: hidden;
   text-align: center;
   cursor: pointer;
-  img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    transition: all 0.3s;
-    &:hover {
-      transform: scale(1.2);
-    }
+`
+const Image = styled.img`
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: all 0.3s;
+  &:hover {
+    transform: scale(1.2);
   }
 `
 
